@@ -23,11 +23,13 @@ public class PlayActivity extends AppCompatActivity {
     Button[] buttonsList = new Button[16];
     View referenceView;
     Boolean startedBoolean = false;
-    TextView countdownText;
+    TextView countdownText, scorelabelText, scoreText;
     String[] colorsList = new String[16];
     String[] predefinedcolorsList = {"#080708","#3772FF","#DF2935","#FDCA40"};
-    String referenceColor;
+    String referenceColor, color;
     Integer timer = 60;
+    Integer score = 0;
+    Timer gameTimer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,11 +37,12 @@ public class PlayActivity extends AppCompatActivity {
         setContentView(R.layout.activity_play);
         referenceView = (View) findViewById(R.id.referenceView);
         countdownText = (TextView) findViewById(R.id.countdownText);
+        scoreText = (TextView) findViewById(R.id.scoreText);
         for (int i = 0; i < 16; i++) {
             String buttonID = "button" + i;
             int resID = getResources().getIdentifier(buttonID, "id", getPackageName());
             buttonsList[i] = (Button) findViewById(resID);
-            String color = predefinedcolorsList[new Random().nextInt(predefinedcolorsList.length)];
+            color = predefinedcolorsList[new Random().nextInt(predefinedcolorsList.length)];
             buttonsList[i].setBackgroundColor(Color.parseColor(color));
             colorsList[i] = color;
             final Integer index = i;
@@ -55,7 +58,7 @@ public class PlayActivity extends AppCompatActivity {
                     buttonsList[index].setBackgroundColor(Color.parseColor(color));
                     colorsList[index] = color;
                     GradientDrawable drawable = (GradientDrawable)referenceView.getBackground();
-                    String referenceColor = getRandomColor(colorsList);
+                    referenceColor = getRandomColor(colorsList);
                     drawable.setColor(Color.parseColor(referenceColor));
                 }
             });
@@ -69,13 +72,16 @@ public class PlayActivity extends AppCompatActivity {
     }
 
     public void setRefreshedTime(String referenceColor, String caseColor){
-        if (referenceColor == caseColor){
+        if (referenceColor.equals(caseColor)){
             timer += 1;
+            score +=3;
+            scoreText.setText(""+score);
         }
     }
 
     public void launchTimer () {
-        new Timer().scheduleAtFixedRate(new TimerTask() {
+        gameTimer = new Timer();
+        gameTimer.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run()
             {
@@ -85,9 +91,14 @@ public class PlayActivity extends AppCompatActivity {
                     public void run()
                     {
                         timer=timer-1;
-                        countdownText.setText(""+timer);
+                        if (timer <= 0) {
+                            countdownText.setText("Looser!");
+                            gameTimer.cancel();
+                            gameTimer.purge();
+                        } else {
+                            countdownText.setText(""+timer);
+                        }
                     }
-
                 });
             }
         }, 0, 1000);

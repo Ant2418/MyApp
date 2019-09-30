@@ -9,12 +9,14 @@
         android:roundIcon="@drawable/ic_dessin_v2"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PlayActivity"></activity>
-        <activity android:name=".Score" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".PlayActivity" android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Score" android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity android:name=".MainActivity" android:configChanges="orientation"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
