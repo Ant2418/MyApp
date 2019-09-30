@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="alias">Pseudo</string>
+    <string name="content_description_logo">Logo de l\'application</string>
+    <string name="play">Commencer</string>
+    <string name="ready">Êtes vous prêt ?!</string>
+    <string name="looser">P E R D U !</string>
+    <string name="tab_score">Tableaux des scores</string>
+</resources>
