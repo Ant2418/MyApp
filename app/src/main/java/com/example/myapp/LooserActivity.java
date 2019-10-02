@@ -18,6 +18,7 @@ public class LooserActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_looser);
+        scoreText = findViewById(R.id.scoreText);
         scoreText.setText(String.valueOf(getIntent().getExtras().getInt("score")));
 
         sharedPreferences = getSharedPreferences("ID", MODE_PRIVATE);

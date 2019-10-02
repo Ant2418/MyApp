@@ -21,57 +21,68 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl1"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/looserText"
+            <LinearLayout
+                android:id="@+id/layoutText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/looser"
-                android:textAlignment="center"
-                android:textSize="36sp"
-                app:layout_constraintBottom_toTopOf="@+id/scoreText"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:layout_editor_absoluteX="-16dp" />
+                android:orientation="vertical"
+                app:layout_constraintTop_toTopOf="parent">
 
-            <TextView
-                android:id="@+id/scoreText"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="@string/score"
-                android:textAlignment="center"
-                android:textSize="36sp"
-                app:layout_constraintBottom_toTopOf="@+id/saveButton"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/looserText" />
+                <TextView
+                    android:id="@+id/looserText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/looser"
+                    android:textAlignment="center"
+                    android:textSize="36sp" />
 
-            <Button
-                android:id="@+id/saveButton"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/colorAccent"
-                android:minHeight="@dimen/dimenHeight"
-                android:text="@string/save"
-                android:textSize="@dimen/textSize"
-                app:layout_constraintBottom_toTopOf="@+id/homeButton"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/scoreText" />
+                <TextView
+                    android:id="@+id/scoreText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/score"
+                    android:textAlignment="center"
+                    android:textSize="36sp" />
 
-            <Button
-                android:id="@+id/homeButton"
-                android:layout_width="0dp"
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutButton"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/bleu"
-                android:minHeight="@dimen/dimenHeight"
-                android:text="@string/home"
-                android:textSize="@dimen/textSize"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/saveButton" />
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@+id/layoutText">
+
+                <Button
+                    android:id="@+id/saveButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorAccent"
+                    android:minHeight="@dimen/dimenHeight"
+                    android:text="@string/save"
+                    android:textSize="@dimen/textSize" />
+
+                <Button
+                    android:id="@+id/homeButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/bleu"
+                    android:minHeight="@dimen/dimenHeight"
+                    android:text="@string/home"
+                    android:textSize="@dimen/textSize" />
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>

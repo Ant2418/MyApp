@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     static String userName;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -31,9 +31,12 @@ public class MainActivity extends AppCompatActivity {
         Button darkButton = findViewById(R.id.buttonLight);
         darkButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
+                System.out.println(getApplicationContext().getTheme().toString());
                 getApplicationContext().setTheme(R.style.AppDark);
-                Intent myIntent = new Intent(MainActivity.this, MainActivity.class);
-                MainActivity.this.startActivity(myIntent);
+                onCreate(savedInstanceState);
+                System.out.println(getApplicationContext().getTheme().toString());
+                /*Intent myIntent = new Intent(MainActivity.this, MainActivity.class);
+                MainActivity.this.startActivity(myIntent);*/
             }
         });
 
