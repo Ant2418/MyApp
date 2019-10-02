@@ -9,21 +9,25 @@
         android:roundIcon="@drawable/ic_dessin_v2"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <activity android:name=".MainActivity" android:configChanges="orientation"
-            android:screenOrientation="portrait" >
+        <activity android:name=".LooserActivity"></activity>
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".PlayActivity" android:configChanges="orientation"
+        <activity
+            android:name=".PlayActivity"
+            android:configChanges="orientation"
             android:screenOrientation="portrait" />
-
-        <activity android:name=".ScoreActivity" android:configChanges="orientation"
+        <activity
+            android:name=".ScoreActivity"
+            android:configChanges="orientation"
             android:screenOrientation="portrait" />
-
     </application>
 
 </manifest>
