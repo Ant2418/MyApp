@@ -44,7 +44,7 @@ public class SharedPreferencesListView extends BaseAdapter {
         }
 
         ((TextView)view.findViewById(R.id.userName)).setText(preferences.get(i).getUserName());
-        ((TextView)view.findViewById(R.id.score)).setText(preferences.get(i).getScoreUser());
+        ((TextView)view.findViewById(R.id.score)).setText(String.valueOf(preferences.get(i).getScoreUser()));
 
         return view;
     }
