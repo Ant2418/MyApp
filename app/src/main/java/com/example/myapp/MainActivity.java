@@ -19,7 +19,6 @@ public class MainActivity extends AppCompatActivity {
     TextView monTextView;
     EditText monEditText;
     static String userName;
-    static ArrayList<Save> saveList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

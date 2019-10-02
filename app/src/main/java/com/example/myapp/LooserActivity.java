@@ -18,21 +18,15 @@ public class LooserActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_looser);
-        scoreText.setText("" +getIntent().getExtras().getInt("score"));
+        scoreText.setText(String.valueOf(getIntent().getExtras().getInt("score")));
 
         sharedPreferences = getSharedPreferences("ID", MODE_PRIVATE);
         findViewById(R.id.saveButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 sharedPreferences.edit().putString("userName", MainActivity.userName).apply();
-                sharedPreferences.edit().putString("score", ""+getIntent().getExtras().getInt("score")).apply();
-            }
-        });
-
-        Button saveButton = findViewById(R.id.saveButton);
-        saveButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                MainActivity.saveList.add(new Save(MainActivity.userName, Integer.parseInt(scoreText.getText().toString())));
+                sharedPreferences.edit().putString("score", String.valueOf(getIntent().getExtras().getInt("score"))).apply();
+                //MainActivity.saveList.add(new Save(MainActivity.userName, Integer.parseInt(scoreText.getText().toString())));
                 Intent myIntent = new Intent(LooserActivity.this, MainActivity.class);
                 LooserActivity.this.startActivity(myIntent);
             }
