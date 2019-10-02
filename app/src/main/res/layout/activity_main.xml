@@ -96,10 +96,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/colorAccent"
-                android:minHeight="88dp"
+                android:minHeight="@dimen/dimenHeight"
                 android:padding="10dp"
                 android:text="@string/play"
-                android:textSize="36sp" />
+                android:textSize="@dimen/textSize" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -111,10 +111,10 @@
                     android:layout_height="0dp"
                     android:layout_marginTop="16dp"
                     android:backgroundTint="@color/bleu"
-                    android:minHeight="88dp"
+                    android:minHeight="@dimen/dimenHeight"
                     android:padding="10dp"
                     android:text="@string/score"
-                    android:textSize="36sp"
+                    android:textSize="@dimen/textSize"
                     app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 

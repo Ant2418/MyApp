@@ -6,4 +6,6 @@
     <string name="ready">Êtes vous prêt </string>
     <string name="looser">P E R D U !</string>
     <string name="tab_score">Tableaux des scores</string>
+    <string name="home">Accueil</string>
+    <string name="save">Sauvegarder</string>
 </resources>
