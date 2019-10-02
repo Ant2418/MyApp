@@ -27,7 +27,7 @@ public class PlayActivity extends AppCompatActivity {
     String[] colorsList = new String[16];
     String[] predefinedcolorsList = {"#080708","#3772FF","#DF2935","#FDCA40"};
     String referenceColor, color;
-    Integer timer = 60;
+    Integer timer = 10;
     Integer score = 0;
     Timer gameTimer;
 
