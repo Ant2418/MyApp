@@ -4,7 +4,7 @@
     <string name="content_description_logo">Icon of application</string>
     <string name="play">Start</string>
     <string name="score">Score</string>
-    <string name="ready">Ready ?!</string>
+    <string name="ready">Ready </string>
     <string name="looser">L O O S E R !</string>
     <string name="tab_score">Table of score</string>
     <string name="rang">Rang</string>
