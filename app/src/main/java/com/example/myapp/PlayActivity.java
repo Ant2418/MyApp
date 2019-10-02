@@ -97,7 +97,7 @@ public class PlayActivity extends AppCompatActivity {
                     public void run()
                     {
                         timer=timer-1;
-                        gameProgressBar.setProgress((timer*100)/60);
+                        gameProgressBar.setProgress((timer*100)/10);
                         if (timer <= 0) {
                             countdownText.setText(R.string.looser);
                             gameTimer.cancel();
