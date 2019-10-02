@@ -13,4 +13,7 @@
     <string name="home">Home</string>
     <string name="save">Save</string>
     <string name="saved">Saved ! 👍</string>
+    <string name="easy">Easy 💩</string>
+    <string name="medium">Medium 🤔</string>
+    <string name="hard">Hard 🔥</string>
 </resources>

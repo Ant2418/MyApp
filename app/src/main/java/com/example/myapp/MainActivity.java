@@ -2,65 +2,71 @@ package com.example.myapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
+import android.widget.SeekBar;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-
 public class MainActivity extends AppCompatActivity {
-    TextView monTextView;
-    EditText monEditText;
     static String userName;
-    String leTheme;
+    static String difficulty;
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
-
+        //TODO Refaire apparaitre la difficulté et l'username quand on rejoue à la page d'accueil
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        monEditText = findViewById(R.id.editTextPseudo);
-        monTextView = findViewById(R.id.textViewPseudo);
+        ((SeekBar)findViewById(R.id.seekBar)).setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener(){
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                switch (progress) {
+                    case 0:
+                        ((TextView)findViewById(R.id.difficultyText)).setText(R.string.easy);
+                        break;
+                    case 1:
+                        ((TextView)findViewById(R.id.difficultyText)).setText(R.string.medium);
+                        break;
+                    case 2:
+                        ((TextView)findViewById(R.id.difficultyText)).setText(R.string.hard);
+                        break;
+                }
+            }
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {}
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {}
+        });
 
-        Button darkButton = findViewById(R.id.buttonLight);
-        darkButton.setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.buttonLight).setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                /* SharedPreferences pref = getSharedPreferences("cleTheme", MODE_PRIVATE);
                 if (pref.contains("cleTheme")){
                     getApplicationContext().getTheme()
                     getApplicationContext().setTheme(getApplicationContext().getTheme().getResourcesId());
                 }*/
-                System.out.println(getApplicationContext().getTheme().toString());
                 getApplicationContext().setTheme(R.style.AppDark);
                 onCreate(savedInstanceState);
-                System.out.println(getApplicationContext().getTheme().toString());
                 /*Intent myIntent = new Intent(MainActivity.this, MainActivity.class);
                 MainActivity.this.startActivity(myIntent);*/
             }
         });
 
-
-        Button playButton = findViewById(R.id.buttonStart);
-        playButton.setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.buttonStart).setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                userName = monEditText.getText().toString();
+                difficulty = String.valueOf(((SeekBar)findViewById(R.id.seekBar)).getProgress());
+                userName = ((EditText)findViewById(R.id.editTextPseudo)).getText().toString();
                 Intent myIntent = new Intent(MainActivity.this, PlayActivity.class);
                 MainActivity.this.startActivity(myIntent);
                 MainActivity.this.finish();
             }
         });
 
-
-        Button scoreButton = findViewById(R.id.buttonScore);
-        scoreButton.setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.buttonScore).setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent myIntent = new Intent(MainActivity.this, ScoreActivity.class);
                 MainActivity.this.startActivity(myIntent);
@@ -70,23 +76,15 @@ public class MainActivity extends AppCompatActivity {
 
         TextWatcher monTextWatcher = new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                monTextView.setText(monEditText.getText());
-
+                ((TextView)findViewById(R.id.textViewPseudo)).setText(((EditText)findViewById(R.id.editTextPseudo)).getText());
             }
-
             @Override
-            public void afterTextChanged(Editable s) {
-
-            }
+            public void afterTextChanged(Editable s) {}
         };
-        
-        monEditText.addTextChangedListener(monTextWatcher);
 
+        ((EditText)findViewById(R.id.editTextPseudo)).addTextChangedListener(monTextWatcher);
     }
 }

@@ -13,37 +13,27 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Arrays;
 import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
 import java.util.Random;
-import java.util.Set;
 import java.util.Timer;
 import java.util.TimerTask;
 
 public class PlayActivity extends AppCompatActivity {
 
     Button[] buttonsList = new Button[16];
-    View referenceView;
     Boolean startedBoolean = false;
-    TextView countdownText, scoreText;
     String[] colorsList = new String[16];
     String[] predefinedColorsList = {"#080708","#3772FF","#DF2935","#FDCA40"};
     String referenceColor, color;
-    Integer timer = 10;
+    Integer maxTime = 60;
+    Integer timer = maxTime;
     Integer score = 0;
     Timer gameTimer;
-    ProgressBar gameProgressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_play);
 
-        referenceView = findViewById(R.id.referenceView);
-        countdownText = findViewById(R.id.countdownText);
-        gameProgressBar = findViewById(R.id.gameProgressBar);
-        gameProgressBar.setProgress(100);
-        scoreText = findViewById(R.id.scoreText);
         for (int i = 0; i < 16; i++) {
             String buttonID = "button" + i;
             int resID = getResources().getIdentifier(buttonID, "id", getPackageName());
@@ -63,7 +53,7 @@ public class PlayActivity extends AppCompatActivity {
                     String color = predefinedColorsList[new Random().nextInt(predefinedColorsList.length)];
                     buttonsList[index].setBackgroundColor(Color.parseColor(color));
                     colorsList[index] = color;
-                    GradientDrawable drawable = (GradientDrawable)referenceView.getBackground();
+                    GradientDrawable drawable = (GradientDrawable)findViewById(R.id.referenceView).getBackground();
                     referenceColor = getRandomColor(colorsList);
                     drawable.setColor(Color.parseColor(referenceColor));
                 }
@@ -84,7 +74,7 @@ public class PlayActivity extends AppCompatActivity {
         } else {
             score -=1;
         }
-        scoreText.setText(""+score);
+        ((TextView)findViewById(R.id.scoreText)).setText(String.valueOf(score));
     }
 
     public void launchTimer () {
@@ -99,7 +89,7 @@ public class PlayActivity extends AppCompatActivity {
                     public void run()
                     {
                         timer=timer-1;
-                        gameProgressBar.setProgress((timer*100)/10);
+                        ((ProgressBar)findViewById(R.id.gameProgressBar)).setProgress((timer*100)/maxTime);
                         if (timer <= 0) {
                             Intent myIntent = new Intent(PlayActivity.this, LooserActivity.class);
                             Bundle b = new Bundle();
@@ -109,10 +99,10 @@ public class PlayActivity extends AppCompatActivity {
                             gameTimer.cancel();
                             gameTimer.purge();
                             PlayActivity.this.finish();
-                        } else if (timer >= 60){
-                            timer = 60;
+                        } else if (timer >= maxTime){
+                            timer = maxTime;
                         }
-                        countdownText.setText(String.valueOf(timer));
+                        ((TextView)findViewById(R.id.countdownText)).setText(String.valueOf(timer));
                     }
                 });
             }
