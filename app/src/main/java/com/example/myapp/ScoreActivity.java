@@ -20,7 +20,7 @@ public class ScoreActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_score);
 
-        TableLayout maTable = (TableLayout) findViewById(R.id.tabScore);
+//        TableLayout maTable = (TableLayout) findViewById(R.id.tabScore);
 
         SharedPreferences sharedPreferences = getSharedPreferences("ID", Context.MODE_PRIVATE);
         ArrayList<Save> saves = new ArrayList<>();
@@ -29,7 +29,7 @@ public class ScoreActivity extends AppCompatActivity {
             int score = Integer.parseInt(preferences.get(key));
             saves.add(new Save(key, score));
         }
-        ((ListView) findViewById(R.id.list_items)).setAdapter(new SharedPreferencesListView(saves));
+        ((ListView) findViewById(R.id.list_view)).setAdapter(new SharedPreferencesListView(saves));
         /**TableRow row = new TableRow(this);
         TextView tv = new TextView(this);
         tv.setText("This is text");

@@ -3,6 +3,7 @@ package com.example.myapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,15 +12,22 @@ import android.widget.TextView;
 public class LooserActivity extends AppCompatActivity {
 
     TextView scoreText;
+    SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_looser);
-        Bundle b = getIntent().getExtras();
-        if(b != null)
-            scoreText = findViewById(R.id.scoreText);
-            scoreText.setText(""+b.getInt("score"));
+        scoreText.setText("" +getIntent().getExtras().getInt("score"));
+
+        sharedPreferences = getSharedPreferences("ID", MODE_PRIVATE);
+        findViewById(R.id.saveButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sharedPreferences.edit().putString("userName", MainActivity.userName).apply();
+                sharedPreferences.edit().putString("score", ""+getIntent().getExtras().getInt("score")).apply();
+            }
+        });
 
         Button saveButton = findViewById(R.id.saveButton);
         saveButton.setOnClickListener(new View.OnClickListener() {
