@@ -25,6 +25,16 @@ public class MainActivity extends AppCompatActivity {
         monEditText = findViewById(R.id.editTextPseudo);
         monTextView = findViewById(R.id.textViewPseudo);
 
+        Button darkButton = findViewById(R.id.buttonLight);
+        darkButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                getApplicationContext().setTheme(R.style.AppDark);
+                Intent myIntent = new Intent(MainActivity.this, MainActivity.class);
+                MainActivity.this.startActivity(myIntent);
+            }
+        });
+
+
         Button playButton = findViewById(R.id.buttonStart);
         playButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
@@ -33,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
                 MainActivity.this.startActivity(myIntent);
             }
         });
+
 
         Button scoreButton = findViewById(R.id.buttonScore);
         scoreButton.setOnClickListener(new View.OnClickListener() {
@@ -61,5 +72,6 @@ public class MainActivity extends AppCompatActivity {
         };
         
         monEditText.addTextChangedListener(monTextWatcher);
+
     }
 }
