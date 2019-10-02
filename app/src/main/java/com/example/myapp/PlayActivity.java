@@ -5,6 +5,7 @@ import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,6 +31,7 @@ public class PlayActivity extends AppCompatActivity {
     Integer timer = 10;
     Integer score = 0;
     Timer gameTimer;
+    ProgressBar gameProgressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +39,8 @@ public class PlayActivity extends AppCompatActivity {
         setContentView(R.layout.activity_play);
         referenceView = findViewById(R.id.referenceView);
         countdownText = findViewById(R.id.countdownText);
-        countdownText = findViewById(R.id.countdownText);
+        gameProgressBar = findViewById(R.id.gameProgressBar);
+        gameProgressBar.setProgress(100);
         scoreText = findViewById(R.id.scoreText);
         for (int i = 0; i < 16; i++) {
             String buttonID = "button" + i;
@@ -94,6 +97,7 @@ public class PlayActivity extends AppCompatActivity {
                     public void run()
                     {
                         timer=timer-1;
+                        gameProgressBar.setProgress((timer*100)/60);
                         if (timer <= 0) {
                             countdownText.setText(R.string.looser);
                             gameTimer.cancel();
