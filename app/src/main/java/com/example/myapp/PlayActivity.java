@@ -106,13 +106,13 @@ public class PlayActivity extends AppCompatActivity {
                             b.putInt("score", score);
                             myIntent.putExtras(b);
                             PlayActivity.this.startActivity(myIntent);
-                            countdownText.setText(R.string.looser);
                             gameTimer.cancel();
                             gameTimer.purge();
                             PlayActivity.this.finish();
-                        } else {
-                            countdownText.setText(""+timer);
+                        } else if (timer >= 60){
+                            timer = 60;
                         }
+                        countdownText.setText(String.valueOf(timer));
                     }
                 });
             }
