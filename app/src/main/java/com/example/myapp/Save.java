@@ -1,6 +1,6 @@
 package com.example.myapp;
 
-public class User {
+public class Save {
     private String userName;
     private Integer scoreUser;
 
@@ -9,12 +9,12 @@ public class User {
      * @param userName string
      * @param scoreUser int
      */
-    public User(String userName, Integer scoreUser) {
+    public Save(String userName, Integer scoreUser) {
         this.userName = userName;
         this.scoreUser = scoreUser;
     }
 
-    public User(String userName) {
+    public Save(String userName) {
         this.userName = userName;
     }
 
