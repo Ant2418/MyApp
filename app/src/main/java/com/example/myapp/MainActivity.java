@@ -19,9 +19,11 @@ public class MainActivity extends AppCompatActivity {
     TextView monTextView;
     EditText monEditText;
     static String userName;
+    String leTheme;
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -31,6 +33,11 @@ public class MainActivity extends AppCompatActivity {
         Button darkButton = findViewById(R.id.buttonLight);
         darkButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
+               /* SharedPreferences pref = getSharedPreferences("cleTheme", MODE_PRIVATE);
+                if (pref.contains("cleTheme")){
+                    getApplicationContext().getTheme()
+                    getApplicationContext().setTheme(getApplicationContext().getTheme().getResourcesId());
+                }*/
                 System.out.println(getApplicationContext().getTheme().toString());
                 getApplicationContext().setTheme(R.style.AppDark);
                 onCreate(savedInstanceState);

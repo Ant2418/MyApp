@@ -1,5 +1,6 @@
 package com.example.myapp;
 
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -48,4 +49,11 @@ public class SharedPreferencesListView extends BaseAdapter {
 
         return view;
     }
+
+
+    protected void onCreate(Bundle savedInstanceState) {
+
+    }
+
+
 }
