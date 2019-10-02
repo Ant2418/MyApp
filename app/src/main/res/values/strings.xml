@@ -12,4 +12,5 @@
     <string name="startCounter">0</string>
     <string name="home">Home</string>
     <string name="save">Save</string>
+    <string name="saved">Saved ! 👍</string>
 </resources>

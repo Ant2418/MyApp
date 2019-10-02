@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class LooserActivity extends AppCompatActivity {
 
@@ -28,14 +29,13 @@ public class LooserActivity extends AppCompatActivity {
                 sharedPreferences.edit().putString(sharedPreferences.getString("numberOfParty", "0")+"-userName", MainActivity.userName).apply();
                 sharedPreferences.edit().putString(sharedPreferences.getString("numberOfParty", "0")+"-scoreUser", String.valueOf(getIntent().getExtras().getInt("score"))).apply();
                 sharedPreferences.edit().putString("numberOfParty", String.valueOf(Integer.parseInt(sharedPreferences.getString("numberOfParty", "0"))+1)).apply();
-                //MainActivity.saveList.add(new Save(MainActivity.userName, Integer.parseInt(scoreText.getText().toString())));
                 Intent myIntent = new Intent(LooserActivity.this, MainActivity.class);
                 LooserActivity.this.startActivity(myIntent);
+                Toast.makeText(getApplicationContext(), R.string.saved, Toast.LENGTH_SHORT).show();
             }
         });
 
-        Button homeButton = findViewById(R.id.homeButton);
-        homeButton.setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.homeButton).setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent myIntent = new Intent(LooserActivity.this, MainActivity.class);
                 LooserActivity.this.startActivity(myIntent);
