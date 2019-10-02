@@ -24,10 +24,9 @@ public class ScoreActivity extends AppCompatActivity {
 
         SharedPreferences sharedPreferences = getSharedPreferences("ID", Context.MODE_PRIVATE);
         ArrayList<Save> saves = new ArrayList<>();
-        HashMap<String, String> preferences = (HashMap<String, String>)sharedPreferences.getAll().remove("numberOfParty");
-        for (String key : preferences.keySet()){
-            String score = preferences.get(key);
-            saves.add(new Save(key, score));
+        HashMap<String, String> preferences = (HashMap<String, String>)sharedPreferences.getAll();
+        for (int i = 0; i <= Integer.parseInt(sharedPreferences.getString("numberOfParty", "0")); i++) {
+            saves.add(new Save(preferences.get(i+"-userName"),preferences.get(i+"-scoreUser")));
         }
         ((ListView) findViewById(R.id.list_view)).setAdapter(new SharedPreferencesListView(saves));
         /**TableRow row = new TableRow(this);
