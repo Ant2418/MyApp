@@ -18,6 +18,7 @@ public class LooserActivity extends AppCompatActivity {
         setContentView(R.layout.activity_looser);
         Bundle b = getIntent().getExtras();
         if(b != null)
+            scoreText = findViewById(R.id.scoreText);
             scoreText.setText(""+b.getInt("score"));
 
         Button saveButton = findViewById(R.id.saveButton);
