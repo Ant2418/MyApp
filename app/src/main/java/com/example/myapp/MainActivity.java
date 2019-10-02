@@ -1,14 +1,18 @@
 package com.example.myapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -16,6 +20,7 @@ import org.w3c.dom.Text;
 public class MainActivity extends AppCompatActivity {
     TextView monTextView;
     EditText monEditText;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

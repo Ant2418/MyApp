@@ -35,6 +35,7 @@
         app:layout_constraintTop_toBottomOf="@+id/logo">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@id/linearLayoutV"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -48,7 +49,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintLeft_toLeftOf="@+id/linearLayoutV"
                 app:layout_constraintRight_toRightOf="@+id/linearLayoutV"
-                app:layout_constraintStart_toStartOf="parent">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
                     android:id="@+id/textView2"
@@ -89,21 +91,15 @@
             android:orientation="vertical"
             android:padding="10dp">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <Button
+                android:id="@+id/buttonStart"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <Button
-                    android:id="@+id/buttonStart"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="#FDCA40"
-                    android:minHeight="88dp"
-                    android:padding="10dp"
-                    android:text="@string/play"
-                    android:textSize="36sp"
-                    tools:layout_editor_absoluteY="10dp" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorAccent"
+                android:minHeight="88dp"
+                android:padding="10dp"
+                android:text="@string/play"
+                android:textSize="36sp" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -114,7 +110,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_marginTop="16dp"
-                    android:backgroundTint="#3272ff"
+                    android:backgroundTint="@color/bleu"
                     android:minHeight="88dp"
                     android:padding="10dp"
                     android:text="@string/score"
@@ -126,13 +122,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <Switch
-                    android:id="@+id/switch1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/darkmod"
+                <Button
+                    android:id="@+id/buttonLight"
+                    android:layout_width="@dimen/dimenLight"
+                    android:layout_height="@dimen/dimenLight"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/ic_idea"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>

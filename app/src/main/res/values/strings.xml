@@ -9,4 +9,5 @@
     <string name="tab_score">Table of score</string>
     <string name="rang">Rang</string>
     <string name="darkmod">Darkmod</string>
+    <string name="startCounter">0</string>
 </resources>

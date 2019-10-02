@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#DF2935</color>
-    <color name="colorPrimaryDark">#080708</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="dark">#000000</color>
     <color name="colorAccent">#FDCA40</color>
+    <color name="bleu">#3782ff</color>
+    <color name="grey">#E6E8E6</color>
+    <color name="white">#FFFFFF</color>
+    <color name="pink">#FFC0CB</color>
 </resources>
 
 <!--
 
-    <color name="ROuge">#DF2935</color>
+    <color name="Rouge">#DF2935</color>
     <color name="Gris">#E6E8E6</color>
     <color name="Noir">#080708</color>
     <color name="Jaune">#FDCA40</color>
