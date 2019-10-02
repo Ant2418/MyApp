@@ -14,6 +14,10 @@ public class User {
         this.scoreUser = scoreUser;
     }
 
+    public User(String userName) {
+        this.userName = userName;
+    }
+
     /**
      * Getter du nom de l'utilisateur
      * @return nom de l'utilisateur

@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         Button playButton = (Button) findViewById(R.id.buttonStart);
         playButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                theUser.setUserName(monEditText.getText().toString());
+                theUser = new User(monEditText.getText().toString());
                 Intent myIntent = new Intent(MainActivity.this, PlayActivity.class);
                 MainActivity.this.startActivity(myIntent);
             }

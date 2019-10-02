@@ -23,7 +23,7 @@ public class PlayActivity extends AppCompatActivity {
     Button[] buttonsList = new Button[16];
     View referenceView;
     Boolean startedBoolean = false;
-    TextView countdownText, scorelabelText, scoreText;
+    TextView countdownText, scoreText;
     String[] colorsList = new String[16];
     String[] predefinedcolorsList = {"#080708","#3772FF","#DF2935","#FDCA40"};
     String referenceColor, color;
