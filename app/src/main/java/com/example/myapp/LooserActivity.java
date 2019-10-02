@@ -25,6 +25,17 @@ public class LooserActivity extends AppCompatActivity {
         saveButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 MainActivity.saveList.add(new Save(MainActivity.userName, Integer.parseInt(scoreText.getText().toString())));
+                Intent myIntent = new Intent(LooserActivity.this, MainActivity.class);
+                LooserActivity.this.startActivity(myIntent);
+            }
+        });
+
+        Button homeButton = findViewById(R.id.homeButton);
+        homeButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent myIntent = new Intent(LooserActivity.this, MainActivity.class);
+                LooserActivity.this.startActivity(myIntent);
+                LooserActivity.this.finish();
             }
         });
     }

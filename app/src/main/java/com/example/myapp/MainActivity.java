@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
                 userName = monEditText.getText().toString();
                 Intent myIntent = new Intent(MainActivity.this, PlayActivity.class);
                 MainActivity.this.startActivity(myIntent);
+                MainActivity.this.finish();
             }
         });
 
@@ -54,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent myIntent = new Intent(MainActivity.this, ScoreActivity.class);
                 MainActivity.this.startActivity(myIntent);
+                MainActivity.this.finish();
             }
         });
 

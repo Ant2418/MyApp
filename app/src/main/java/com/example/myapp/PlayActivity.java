@@ -108,6 +108,7 @@ public class PlayActivity extends AppCompatActivity {
                             countdownText.setText(R.string.looser);
                             gameTimer.cancel();
                             gameTimer.purge();
+                            PlayActivity.this.finish();
                         } else {
                             countdownText.setText(""+timer);
                         }
