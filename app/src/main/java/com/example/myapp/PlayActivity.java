@@ -25,7 +25,7 @@ public class PlayActivity extends AppCompatActivity {
     Boolean startedBoolean = false;
     TextView countdownText, scoreText;
     String[] colorsList = new String[16];
-    String[] predefinedcolorsList = {"#080708","#3772FF","#DF2935","#FDCA40"};
+    String[] predefinedColorsList = {"#080708","#3772FF","#DF2935","#FDCA40"};
     String referenceColor, color;
     Integer timer = 10;
     Integer score = 0;
@@ -35,14 +35,15 @@ public class PlayActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_play);
-        referenceView = (View) findViewById(R.id.referenceView);
-        countdownText = (TextView) findViewById(R.id.countdownText);
-        scoreText = (TextView) findViewById(R.id.scoreText);
+        referenceView = findViewById(R.id.referenceView);
+        countdownText = findViewById(R.id.countdownText);
+        countdownText = findViewById(R.id.countdownText);
+        scoreText = findViewById(R.id.scoreText);
         for (int i = 0; i < 16; i++) {
             String buttonID = "button" + i;
             int resID = getResources().getIdentifier(buttonID, "id", getPackageName());
-            buttonsList[i] = (Button) findViewById(resID);
-            color = predefinedcolorsList[new Random().nextInt(predefinedcolorsList.length)];
+            buttonsList[i] = findViewById(resID);
+            color = predefinedColorsList[new Random().nextInt(predefinedColorsList.length)];
             buttonsList[i].setBackgroundColor(Color.parseColor(color));
             colorsList[i] = color;
             final Integer index = i;
@@ -54,7 +55,7 @@ public class PlayActivity extends AppCompatActivity {
                     } else {
                         setRefreshedTime(referenceColor,colorsList[index]);
                     }
-                    String color = predefinedcolorsList[new Random().nextInt(predefinedcolorsList.length)];
+                    String color = predefinedColorsList[new Random().nextInt(predefinedColorsList.length)];
                     buttonsList[index].setBackgroundColor(Color.parseColor(color));
                     colorsList[index] = color;
                     GradientDrawable drawable = (GradientDrawable)referenceView.getBackground();
@@ -66,7 +67,7 @@ public class PlayActivity extends AppCompatActivity {
     }
 
     public String getRandomColor(String[] colorsList){
-        String[] colorsSet = new HashSet<String>(Arrays.asList(colorsList)).toArray(new String[0]);
+        String[] colorsSet = new HashSet<>(Arrays.asList(colorsList)).toArray(new String[0]);
         int rnd = new Random().nextInt(colorsSet.length);
         return colorsSet[rnd];
     }
@@ -75,8 +76,10 @@ public class PlayActivity extends AppCompatActivity {
         if (referenceColor.equals(caseColor)){
             timer += 1;
             score +=3;
-            scoreText.setText(""+score);
+        } else {
+            score -=1;
         }
+        scoreText.setText(""+score);
     }
 
     public void launchTimer () {
@@ -92,7 +95,7 @@ public class PlayActivity extends AppCompatActivity {
                     {
                         timer=timer-1;
                         if (timer <= 0) {
-                            countdownText.setText("Looser!");
+                            countdownText.setText(R.string.looser);
                             gameTimer.cancel();
                             gameTimer.purge();
                         } else {

@@ -28,10 +28,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        monEditText = (EditText) findViewById(R.id.editTextPseudo);
-        monTextView = (TextView) findViewById(R.id.textViewPseudo);
+        monEditText = findViewById(R.id.editTextPseudo);
+        monTextView = findViewById(R.id.textViewPseudo);
 
-        Button playButton = (Button) findViewById(R.id.buttonStart);
+        Button playButton = findViewById(R.id.buttonStart);
         playButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 theUser = new User(monEditText.getText().toString());
@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button scoreButton = (Button) findViewById(R.id.buttonScore);
+        Button scoreButton = findViewById(R.id.buttonScore);
         scoreButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent myIntent = new Intent(MainActivity.this, Score.class);
