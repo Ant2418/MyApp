@@ -20,6 +20,7 @@ import org.w3c.dom.Text;
 public class MainActivity extends AppCompatActivity {
     TextView monTextView;
     EditText monEditText;
+    static User theUser;
 
 
     @Override
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         Button playButton = (Button) findViewById(R.id.buttonStart);
         playButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
+                theUser.setUserName(monEditText.getText().toString());
                 Intent myIntent = new Intent(MainActivity.this, PlayActivity.class);
                 MainActivity.this.startActivity(myIntent);
             }
