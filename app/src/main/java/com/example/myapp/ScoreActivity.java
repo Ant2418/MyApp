@@ -26,7 +26,7 @@ public class ScoreActivity extends AppCompatActivity {
         ArrayList<Save> saves = new ArrayList<>();
         HashMap<String, String> preferences = (HashMap<String, String>)sharedPreferences.getAll();
         for (String key : preferences.keySet()){
-            int score = Integer.parseInt(preferences.get(key));
+            String score = preferences.get(key);
             saves.add(new Save(key, score));
         }
         ((ListView) findViewById(R.id.list_view)).setAdapter(new SharedPreferencesListView(saves));

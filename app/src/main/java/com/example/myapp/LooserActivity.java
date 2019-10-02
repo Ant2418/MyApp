@@ -26,7 +26,7 @@ public class LooserActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 sharedPreferences.edit().putString("userName", MainActivity.userName).apply();
-                sharedPreferences.edit().putInt("scoreUser", getIntent().getExtras().getInt("score")).apply();
+                sharedPreferences.edit().putString("scoreUser", String.valueOf(getIntent().getExtras().getInt("score"))).apply();
                 //MainActivity.saveList.add(new Save(MainActivity.userName, Integer.parseInt(scoreText.getText().toString())));
                 Intent myIntent = new Intent(LooserActivity.this, MainActivity.class);
                 LooserActivity.this.startActivity(myIntent);

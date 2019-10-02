@@ -2,14 +2,14 @@ package com.example.myapp;
 
 public class Save {
     private String userName;
-    private Integer scoreUser;
+    private String scoreUser;
 
     /**
      * Constructeur de la classe USER
      * @param userName string
      * @param scoreUser int
      */
-    public Save(String userName, Integer scoreUser) {
+    public Save(String userName, String scoreUser) {
         this.userName = userName;
         this.scoreUser = scoreUser;
     }
@@ -36,9 +36,9 @@ public class Save {
 
     /**
      * getter du score de l'utilisateur
-     * @return score de l'utilisateur (int)
+     * @return score de l'utilisateur (string)
      */
-    public Integer getScoreUser() {
+    public String getScoreUser() {
         return scoreUser;
     }
 
@@ -46,7 +46,7 @@ public class Save {
      * Setter du score de l'utilisateur
      * @param scoreUser
      */
-    public void setScoreUser(Integer scoreUser) {
+    public void setScoreUser(String scoreUser) {
         this.scoreUser = scoreUser;
     }
 }
