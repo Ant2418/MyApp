@@ -102,8 +102,8 @@ public class PlayActivity extends AppCompatActivity {
                         if (timer <= 0) {
                             Intent myIntent = new Intent(PlayActivity.this, LooserActivity.class);
                             Bundle b = new Bundle();
-                            b.putInt("score", score); //Your id
-                            myIntent.putExtras(b); //Put your id to your next Intent
+                            b.putInt("score", score);
+                            myIntent.putExtras(b);
                             PlayActivity.this.startActivity(myIntent);
                             countdownText.setText(R.string.looser);
                             gameTimer.cancel();

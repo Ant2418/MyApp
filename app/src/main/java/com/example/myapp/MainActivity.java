@@ -2,7 +2,9 @@ package com.example.myapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -11,11 +13,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
     TextView monTextView;
     EditText monEditText;
     static String userName;
-
+    static ArrayList<Save> saveList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
