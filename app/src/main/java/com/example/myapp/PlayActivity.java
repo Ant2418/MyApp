@@ -1,5 +1,6 @@
 package com.example.myapp;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
@@ -99,6 +100,11 @@ public class PlayActivity extends AppCompatActivity {
                         timer=timer-1;
                         gameProgressBar.setProgress((timer*100)/10);
                         if (timer <= 0) {
+                            Intent myIntent = new Intent(PlayActivity.this, LooserActivity.class);
+                            Bundle b = new Bundle();
+                            b.putInt("score", score); //Your id
+                            myIntent.putExtras(b); //Put your id to your next Intent
+                            PlayActivity.this.startActivity(myIntent);
                             countdownText.setText(R.string.looser);
                             gameTimer.cancel();
                             gameTimer.purge();

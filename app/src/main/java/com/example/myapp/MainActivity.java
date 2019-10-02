@@ -14,7 +14,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
     TextView monTextView;
     EditText monEditText;
-    static User theUser;
+    static String userName;
 
 
     @Override
@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         Button playButton = findViewById(R.id.buttonStart);
         playButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                theUser = new User(monEditText.getText().toString());
+                userName = monEditText.getText().toString();
                 Intent myIntent = new Intent(MainActivity.this, PlayActivity.class);
                 MainActivity.this.startActivity(myIntent);
             }
