@@ -12,7 +12,9 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -22,9 +24,16 @@ public class PlayActivity extends AppCompatActivity {
     Button[] buttonsList = new Button[16];
     Boolean startedBoolean = false;
     String[] colorsList = new String[16];
-    String[] predefinedColorsList = {"#080708","#3772FF","#DF2935","#FDCA40"};
     String referenceColor, color;
-    Integer maxTime = 60;
+    String[] easyParameters = {"60","#080708","#3772FF","#DF2935","#FDCA40"};
+    String[] mediumParameters = {"40","#080708","#3772FF","#DF2935","#FDCA40","#9BC53D","#E83F6F"};
+    String[] hardParameters = {"1","#080708","#3772FF","#DF2935","#FDCA40","#9BC53D","#E83F6F","#32936F","#FF6700"};
+    Map<String, String[]> difficultyParameters = new HashMap<String, String[]>() {{
+        put("0", easyParameters);
+        put("1", mediumParameters);
+        put("2", hardParameters);
+    }};
+    Integer maxTime = Integer.parseInt(difficultyParameters.get(MainActivity.difficulty)[0]);
     Integer timer = maxTime;
     Integer score = 0;
     Timer gameTimer;
@@ -38,7 +47,7 @@ public class PlayActivity extends AppCompatActivity {
             String buttonID = "button" + i;
             int resID = getResources().getIdentifier(buttonID, "id", getPackageName());
             buttonsList[i] = findViewById(resID);
-            color = predefinedColorsList[new Random().nextInt(predefinedColorsList.length)];
+            color = difficultyParameters.get(MainActivity.difficulty)[new Random().nextInt(difficultyParameters.get(MainActivity.difficulty).length - 1)+ 1];
             buttonsList[i].setBackgroundColor(Color.parseColor(color));
             colorsList[i] = color;
             final Integer index = i;
@@ -50,7 +59,7 @@ public class PlayActivity extends AppCompatActivity {
                     } else {
                         setRefreshedTime(referenceColor,colorsList[index]);
                     }
-                    String color = predefinedColorsList[new Random().nextInt(predefinedColorsList.length)];
+                    String color = difficultyParameters.get(MainActivity.difficulty)[new Random().nextInt(difficultyParameters.get(MainActivity.difficulty).length - 1)+ 1];
                     buttonsList[index].setBackgroundColor(Color.parseColor(color));
                     colorsList[index] = color;
                     GradientDrawable drawable = (GradientDrawable)findViewById(R.id.referenceView).getBackground();

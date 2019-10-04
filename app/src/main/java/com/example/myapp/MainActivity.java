@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     static String userName;
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         ((SeekBar)findViewById(R.id.seekBar)).setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener(){
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                difficulty = String.valueOf(progress);
                 switch (progress) {
                     case 0:
                         ((TextView)findViewById(R.id.difficultyText)).setText(R.string.easy);
@@ -42,27 +44,17 @@ public class MainActivity extends AppCompatActivity {
             public void onStopTrackingTouch(SeekBar seekBar) {}
         });
 
-        findViewById(R.id.buttonLight).setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-               /* SharedPreferences pref = getSharedPreferences("cleTheme", MODE_PRIVATE);
-                if (pref.contains("cleTheme")){
-                    getApplicationContext().getTheme()
-                    getApplicationContext().setTheme(getApplicationContext().getTheme().getResourcesId());
-                }*/
-                getApplicationContext().setTheme(R.style.AppDark);
-                onCreate(savedInstanceState);
-                /*Intent myIntent = new Intent(MainActivity.this, MainActivity.class);
-                MainActivity.this.startActivity(myIntent);*/
-            }
-        });
-
         findViewById(R.id.buttonStart).setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 difficulty = String.valueOf(((SeekBar)findViewById(R.id.seekBar)).getProgress());
                 userName = ((EditText)findViewById(R.id.editTextPseudo)).getText().toString();
-                Intent myIntent = new Intent(MainActivity.this, PlayActivity.class);
-                MainActivity.this.startActivity(myIntent);
-                MainActivity.this.finish();
+                if (userName.isEmpty()) {
+                    Toast.makeText(getApplicationContext(), R.string.no_username, Toast.LENGTH_SHORT).show();
+                } else {
+                    Intent myIntent = new Intent(MainActivity.this, PlayActivity.class);
+                    MainActivity.this.startActivity(myIntent);
+                    MainActivity.this.finish();
+                }
             }
         });
 
@@ -88,16 +80,11 @@ public class MainActivity extends AppCompatActivity {
         ((EditText)findViewById(R.id.editTextPseudo)).addTextChangedListener(monTextWatcher);
     }
 
-    public void checkPseudo(){
-        //TODO vérifier qu'il y a bien un pseudo
-    }
-
     public void todo(){
-        // TODO programmer la difficulter
         // TODO revoir l'affichage de score (mettre la colonne de difficulter)
         // TODO bloquer le retour en arrière après l'enregistrement
         // TODO ne pas bloquer après la vue du score
         // TODO revoir activity_name layout -> logo et bouton dépassent
-        // TODO dark mode ?
+        // TODO dark mode ? TU LE FAIS PAS j'ai tout enlever, juste si tu peux enlever le paramétrage des couleurs du mode dans les xml stppp
     }
 }

@@ -12,4 +12,5 @@
     <string name="easy">Facile 💩</string>
     <string name="medium">Moyen 🤔</string>
     <string name="hard">Trop chaud ! 🔥</string>
+    <string name="no_username">Pseudo manquant.. 😔</string>
 </resources>

@@ -8,7 +8,6 @@
     <string name="looser">L O O S E R !</string>
     <string name="tab_score">Table of score</string>
     <string name="rang">Rang</string>
-    <string name="darkmod">Darkmod</string>
     <string name="startCounter">0</string>
     <string name="home">Home</string>
     <string name="save">Save</string>
@@ -16,4 +15,5 @@
     <string name="easy">Easy 💩</string>
     <string name="medium">Medium 🤔</string>
     <string name="hard">Hard 🔥</string>
+    <string name="no_username">Username missing.. 😔</string>
 </resources>
