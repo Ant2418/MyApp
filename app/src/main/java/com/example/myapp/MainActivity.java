@@ -87,4 +87,17 @@ public class MainActivity extends AppCompatActivity {
 
         ((EditText)findViewById(R.id.editTextPseudo)).addTextChangedListener(monTextWatcher);
     }
+
+    public void checkPseudo(){
+        //TODO vérifier qu'il y a bien un pseudo
+    }
+
+    public void todo(){
+        // TODO programmer la difficulter
+        // TODO revoir l'affichage de score (mettre la colonne de difficulter)
+        // TODO bloquer le retour en arrière après l'enregistrement
+        // TODO ne pas bloquer après la vue du score
+        // TODO revoir activity_name layout -> logo et bouton dépassent
+        // TODO dark mode ?
+    }
 }
