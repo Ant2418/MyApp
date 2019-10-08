@@ -46,10 +46,19 @@ public class SharedPreferencesListView extends BaseAdapter {
 
         ((TextView)view.findViewById(R.id.userName)).setText(preferences.get(i).getUserName());
         ((TextView)view.findViewById(R.id.score)).setText(String.valueOf(preferences.get(i).getScoreUser()));
-
+        switch (String.valueOf(preferences.get(i).getDifficulty())){
+            case "0":
+                ((TextView)view.findViewById(R.id.userDifficulty)).setText(R.string.easy);
+                break;
+            case "1":
+                ((TextView)view.findViewById(R.id.userDifficulty)).setText(R.string.medium);
+                break;
+            case "2":
+                ((TextView)view.findViewById(R.id.userDifficulty)).setText(R.string.hard);
+                break;
+        }
         return view;
     }
-
 
     protected void onCreate(Bundle savedInstanceState) {
 

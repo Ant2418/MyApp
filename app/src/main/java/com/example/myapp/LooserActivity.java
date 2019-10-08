@@ -1,7 +1,6 @@
 package com.example.myapp;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.animation.ValueAnimator;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -18,8 +17,12 @@ import nl.dionsegijn.konfetti.models.Size;
 public class LooserActivity extends AppCompatActivity {
 
     SharedPreferences sharedPreferences;
-    //TODO Aligner cette merde sur l'écran dans le xml
 
+    /**
+     * OnCreate of LooserActivity
+     * All methods to run the LooserActivity
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,6 +59,7 @@ public class LooserActivity extends AppCompatActivity {
                 Intent myIntent = new Intent(LooserActivity.this, MainActivity.class);
                 LooserActivity.this.startActivity(myIntent);
                 Toast.makeText(getApplicationContext(), R.string.saved, Toast.LENGTH_SHORT).show();
+                LooserActivity.this.finish();
             }
         });
 

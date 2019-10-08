@@ -8,13 +8,15 @@
 
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="269dp"
-        android:layout_height="276dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:contentDescription="@string/content_description_logo"
+        android:minWidth="@dimen/logo"
+        android:minHeight="@dimen/logo"
         android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/linearLayoutV"
         app:layout_constraintEnd_toEndOf="parent"
@@ -96,14 +98,17 @@
                 android:id="@+id/difficultyText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/easy" />
+                android:text="@string/easy"
+                android:textSize="@dimen/textSizeDefault" />
 
             <SeekBar
                 android:id="@+id/seekBar"
                 style="@style/Widget.AppCompat.SeekBar.Discrete"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginBottom="20dp"
                 android:max="2"
+                android:minWidth="2000dp"
                 android:progress="0" />
 
             <Button

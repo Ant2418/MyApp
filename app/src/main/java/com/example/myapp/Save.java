@@ -3,15 +3,18 @@ package com.example.myapp;
 public class Save {
     private String userName;
     private String scoreUser;
+    private String difficulty;
 
     /**
      * Constructeur de la classe USER
      * @param userName string
      * @param scoreUser int
+     * @param difficulty string
      */
-    public Save(String userName, String scoreUser) {
+    public Save(String userName, String scoreUser, String difficulty) {
         this.userName = userName;
         this.scoreUser = scoreUser;
+        this.difficulty = difficulty;
     }
 
     public Save(String userName) {
@@ -48,5 +51,21 @@ public class Save {
      */
     public void setScoreUser(String scoreUser) {
         this.scoreUser = scoreUser;
+    }
+
+    /**
+     * Getter de la difficulté du jeu
+     * @return la difficulté du jeu
+     */
+    public String getDifficulty() {
+        return difficulty;
+    }
+
+    /**
+     * Setter de la difficulté
+     * @param difficulty
+     */
+    public void setUserDifficulty(String difficulty) {
+        this.difficulty = difficulty;
     }
 }

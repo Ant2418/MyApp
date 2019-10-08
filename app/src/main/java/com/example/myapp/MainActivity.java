@@ -13,9 +13,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    static String userName;
-    static String difficulty;
+    static String userName; // name of user
+    static String difficulty; // game difficulty
 
+    /**
+     * onCreate of MainActivity
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         //TODO Refaire apparaitre la difficulté et l'username quand on rejoue à la page d'accueil
@@ -62,7 +66,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent myIntent = new Intent(MainActivity.this, ScoreActivity.class);
                 MainActivity.this.startActivity(myIntent);
-                MainActivity.this.finish();
             }
         });
 
@@ -78,13 +81,5 @@ public class MainActivity extends AppCompatActivity {
         };
 
         ((EditText)findViewById(R.id.editTextPseudo)).addTextChangedListener(monTextWatcher);
-    }
-
-    public void todo(){
-        // TODO revoir l'affichage de score (mettre la colonne de difficulter)
-        // TODO bloquer le retour en arrière après l'enregistrement
-        // TODO ne pas bloquer après la vue du score
-        // TODO revoir activity_name layout -> logo et bouton dépassent
-        // TODO dark mode ? TU LE FAIS PAS j'ai tout enlever, juste si tu peux enlever le paramétrage des couleurs du mode dans les xml stppp
     }
 }

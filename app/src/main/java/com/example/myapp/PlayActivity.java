@@ -27,7 +27,7 @@ public class PlayActivity extends AppCompatActivity {
     String referenceColor, color;
     String[] easyParameters = {"60","#080708","#3772FF","#DF2935","#FDCA40"};
     String[] mediumParameters = {"40","#080708","#3772FF","#DF2935","#FDCA40","#9BC53D","#E83F6F"};
-    String[] hardParameters = {"1","#080708","#3772FF","#DF2935","#FDCA40","#9BC53D","#E83F6F","#32936F","#FF6700"};
+    String[] hardParameters = {"20","#080708","#3772FF","#DF2935","#FDCA40","#9BC53D","#E83F6F","#32936F","#FF6700"};
     Map<String, String[]> difficultyParameters = new HashMap<String, String[]>() {{
         put("0", easyParameters);
         put("1", mediumParameters);

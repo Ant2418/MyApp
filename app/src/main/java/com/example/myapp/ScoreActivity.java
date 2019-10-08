@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class ScoreActivity extends AppCompatActivity {
+    private String diff ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +22,7 @@ public class ScoreActivity extends AppCompatActivity {
         ArrayList<Save> saves = new ArrayList<>();
         HashMap<String, String> preferences = (HashMap<String, String>)sharedPreferences.getAll();
         for (int i = 0; i <= Integer.parseInt(sharedPreferences.getString("numberOfParty", "0")); i++) {
-            saves.add(new Save(preferences.get(i+"-userName"),preferences.get(i+"-scoreUser")));
+            saves.add(new Save(preferences.get(i+"-userName"),preferences.get(i+"-scoreUser"),preferences.get(i + "-difficulty")));
         }
         ((ListView) findViewById(R.id.list_view)).setAdapter(new SharedPreferencesListView(saves));
     }

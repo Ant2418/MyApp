@@ -34,7 +34,9 @@
                 android:id="@+id/layoutText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
                 android:orientation="vertical"
+                app:layout_constraintBottom_toTopOf="@+id/layoutButton"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
@@ -59,8 +61,10 @@
                 android:id="@+id/layoutButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
                 android:orientation="vertical"
-                app:layout_constraintTop_toBottomOf="@+id/layoutText">
+                android:padding="10dp"
+                app:layout_constraintBottom_toBottomOf="parent">
 
                 <Button
                     android:id="@+id/saveButton"
@@ -71,22 +75,23 @@
                     android:text="@string/save"
                     android:textSize="@dimen/textSize" />
 
-                <Button
-                    android:id="@+id/homeButton"
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="@color/bleu"
-                    android:minHeight="@dimen/dimenHeight"
-                    android:text="@string/home"
-                    android:textSize="@dimen/textSize" />
+                    android:layout_height="match_parent">
+
+                    <Button
+                        android:id="@+id/homeButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:backgroundTint="@color/bleu"
+                        android:minHeight="@dimen/dimenHeight"
+                        android:text="@string/home"
+                        android:textSize="@dimen/textSize"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
             </LinearLayout>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
