@@ -16,4 +16,5 @@
     <string name="medium">Medium 🤔</string>
     <string name="hard">Hard 🔥</string>
     <string name="no_username">Username missing.. 😔</string>
+    <string name="hello">Hello</string>
 </resources>

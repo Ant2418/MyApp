@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                ((TextView)findViewById(R.id.textViewPseudo)).setText(((EditText)findViewById(R.id.editTextPseudo)).getText());
+                ((TextView)findViewById(R.id.textViewPseudo)).setText(String.valueOf(getResources().getText(R.string.hello))+" "+((EditText)findViewById(R.id.editTextPseudo)).getText());
             }
             @Override
             public void afterTextChanged(Editable s) {}

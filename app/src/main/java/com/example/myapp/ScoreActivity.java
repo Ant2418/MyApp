@@ -24,7 +24,7 @@ public class ScoreActivity extends AppCompatActivity {
         for (int i = 0; i <= Integer.parseInt(sharedPreferences.getString("numberOfParty", "0")); i++) {
             saves.add(new Save(preferences.get(i+"-userName"),preferences.get(i+"-scoreUser"),preferences.get(i + "-difficulty")));
         }
-        ((ListView) findViewById(R.id.list_view)).setAdapter(new SharedPreferencesListView(saves));
+        ((ListView) findViewById(R.id.list_view)).setAdapter(new SharedPreferencesListView(saves.subList(0,saves.size()-1)));
     }
 
 

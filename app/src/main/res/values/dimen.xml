@@ -4,7 +4,7 @@
     <dimen name="dimenLight">40dp</dimen>
     <dimen name="dimenHeight">88dp</dimen>
     <dimen name="textSize">36sp</dimen>
-    <dimen name="textSizeBold">18sp</dimen>
-    <dimen name="textSizeDefault">14sp</dimen>
+    <dimen name="textSizeBold">24sp</dimen>
+    <dimen name="textSizeDefault">18sp</dimen>
     <dimen name="logo">200dp</dimen>
 </resources>
