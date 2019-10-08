@@ -1,4 +1,4 @@
-package com.example.biou_pierson;
+package com.example.myapp;
 
 import org.junit.Test;
 

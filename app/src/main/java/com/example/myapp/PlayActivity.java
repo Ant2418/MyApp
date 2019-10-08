@@ -1,4 +1,4 @@
-package com.example.biou_pierson;
+package com.example.myapp;
 
 import android.content.Intent;
 import android.graphics.Color;

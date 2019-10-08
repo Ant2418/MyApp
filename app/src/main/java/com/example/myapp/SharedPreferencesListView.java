@@ -1,4 +1,4 @@
-package com.example.biou_pierson;
+package com.example.myapp;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -7,7 +7,9 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.example.biou_pierson.R;
+import androidx.core.view.LayoutInflaterCompat;
+
+import com.example.myapp.R;
 
 import java.util.List;
 
