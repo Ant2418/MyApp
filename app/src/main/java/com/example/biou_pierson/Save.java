@@ -1,4 +1,4 @@
-package com.example.myapp;
+package com.example.biou_pierson;
 
 public class Save {
     private String userName;

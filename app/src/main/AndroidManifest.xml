@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.myapp">
+    package="com.example.biou_pierson">
 
     <application
         android:allowBackup="true"
@@ -9,9 +9,9 @@
         android:roundIcon="@drawable/ic_dessin_v2"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LooserActivity"></activity>
+        <activity android:name="com.example.biou_pierson.LooserActivity"></activity>
         <activity
-            android:name=".MainActivity"
+            android:name="com.example.biou_pierson.MainActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -21,11 +21,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".PlayActivity"
+            android:name="com.example.biou_pierson.PlayActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ScoreActivity"
+            android:name="com.example.biou_pierson.ScoreActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
     </application>
